@@ -28,5 +28,7 @@ examples=[["benign.png"], ["malignant.png"]]
 image_input = gr.inputs.Image(shape=(150, 150))
 label_output = gr.outputs.Label()
 
-gr.Interface(fn=predict, inputs=image_input, outputs=label_output, examples=examples,
+iface= gr.Interface(fn=predict, inputs=image_input, outputs=label_output, examples=examples,
              title="Identifying Skin Cancer", description="Predicts whether an image of skin is cancerous or not")
+
+iface.launch(share=True)
